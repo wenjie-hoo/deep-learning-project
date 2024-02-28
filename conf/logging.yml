@@ -36,7 +36,7 @@ loggers:
   kedro:
     level: INFO
 
-  deep_learning_project:
+  raccoon_spotter:
     level: INFO
 
 root:

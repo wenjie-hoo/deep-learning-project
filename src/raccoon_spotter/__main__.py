@@ -1,5 +1,5 @@
-"""deep-learning-project file for ensuring the package is executable
-as `deep-learning-project` and `python -m deep_learning_project`
+"""raccoon-spotter file for ensuring the package is executable
+as `raccoon-spotter` and `python -m raccoon_spotter`
 """
 import importlib
 from pathlib import Path

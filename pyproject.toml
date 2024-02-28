@@ -3,28 +3,36 @@ requires = [ "setuptools",]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "deep_learning_project"
+name = "raccoon_spotter"
 readme = "README.md"
 dynamic = [ "dependencies", "version",]
 
 [project.scripts]
-deep-learning-project = "deep_learning_project.__main__:main"
+raccoon-spotter = "raccoon_spotter.__main__:main"
 
 [tool.kedro]
-package_name = "deep_learning_project"
-project_name = "deep-learning-project"
+package_name = "raccoon_spotter"
+project_name = "raccoon-spotter"
 kedro_init_version = "0.19.2"
-tools = [ "Linting", "Custom Logging", "Data Structure", "Kedro Viz",]
+tools = [ "Linting", "Testing", "Custom Logging", "Data Structure", "Kedro Viz",]
 example_pipeline = "True"
 source_dir = "src"
 
 [tool.ruff]
 line-length = 88
 show-fixes = true
-select = [ "F", "W", "E", "I", "UP", "PL", "T201",]
-ignore = [ "E501",]
+lint.select = [ "F", "W", "E", "I", "UP", "PL", "T201",]
+lint.ignore = [ "E501",]
 
 [project.entry-points."kedro.hooks"]
+
+[tool.pytest.ini_options]
+addopts = "--cov-report term-missing --cov src/raccoon_spotter -ra"
+
+[tool.coverage.report]
+fail_under = 0
+show_missing = true
+exclude_lines = [ "pragma: no cover", "raise NotImplementedError",]
 
 [tool.ruff.format]
 docstring-code-format = true
@@ -33,7 +41,7 @@ docstring-code-format = true
 file = "requirements.txt"
 
 [tool.setuptools.dynamic.version]
-attr = "deep_learning_project.__version__"
+attr = "raccoon_spotter.__version__"
 
 [tool.setuptools.packages.find]
 where = [ "src",]

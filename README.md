@@ -1,4 +1,4 @@
-# deep-learning-project
+# raccoon-spotter
 
 ## Overview
 
